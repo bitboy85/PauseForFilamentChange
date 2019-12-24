@@ -337,7 +337,7 @@ class PauseForFilamentChange(Script):
                     prepend_gcode += "M117 " + display_text + "\n"
 
                 # Wait till the user continues printing
-                prepend_gcode += self.putValue(M = 0) + " ; Do the actual pause\n"
+                prepend_gcode += self.putValue(M = 0) + " " + display_text + " ; Do the actual pause\n"
 
                 if home_z:
                     prepend_gcode += self.putValue(G = 28) + " Z ; Reset z axis\n"
